@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📝 Next.js Task Manager App
 
-## Getting Started
+A powerful and modern task manager built with the latest technologies. It includes full authentication, smart filtering, drag-and-drop, reminders with audio/visual notifications, and persistent storage with Firebase.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework**: [Next.js 15 (Turbopack)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Motion & Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Drag and Drop**: [dnd-kit/core](https://dndkit.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Authentication & Database**: [Firebase Authentication & Firestore](https://firebase.google.com/)
+- **Notifications**: Custom AI-powered voice & image reminders
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Features
 
-## Learn More
+- 🔑 **Login & Sign Up** (Firebase Auth)
+- 📦 **Cloud Storage** (Firebase Firestore)
+- 📂 **Real-time Task Management**
+- 🎯 **Filter Tasks** (All, Active, Completed)
+- 🔄 **Drag and Drop** (Reorder tasks easily)
+- 🔍 **Search Tasks** (Live search by name)
+- ⏰ **Smart Reminders**
+  - Plays **sound and visual alert**
+  - Uses AI to **speak task name & user name**
+- 🌙 **Modern Dark UI**
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> Add screenshots here if available
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
