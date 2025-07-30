@@ -4,6 +4,9 @@ body {
   background-color: #0a0a0a;
   color: #ededed;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 /* Scrollbar Style */
@@ -26,22 +29,29 @@ body {
 }
 
 @media (max-width: 640px) {
-  body{
+  body {
     font-size: 14px !important;
   }
   [placeholder] {
     font-size: 10px !important;
   }
-  .inputTask{
+  .inputTask {
     flex-grow: initial !important;
     width: 200px !important;
   }
-  .DeleteAll_btn{
+  .DeleteAll_btn {
     font-size: 12px !important;
   }
-  .custom-media {
+  .tasks_list {
     max-height: 80vh !important;
-    width: 100vw !important;
-    font-size: 14px;
+    width: 92vw !important;
+    font-size: 14px !important;
+  }
+  .logout_Btn {
+    position: fixed;
+    font-size: 13px;
+    top: 20px;
+    right: 30px;
+    height: 30px;
   }
 }
