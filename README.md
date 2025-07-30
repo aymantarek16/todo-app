@@ -33,7 +33,11 @@ A powerful and modern task manager built with the latest technologies. It includ
 
 ## 📸 Screenshots
 
-> Add screenshots here if available
+## 🧾 Preview
+
+![App Screenshot](./screenshot1.png)
+![App Screenshot](./screenshot2.png)
+
 
 ---
 
