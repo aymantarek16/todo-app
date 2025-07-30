@@ -26,7 +26,7 @@ A powerful and modern task manager built with the latest technologies. It includ
 - 🔍 **Search Tasks** (Live search by name)
 - ⏰ **Smart Reminders**
   - Plays **sound and visual alert**
-  - Uses AI to **speak task name & user name**
+  - Uses AI to **speak task name**
 - 🌙 **Modern Dark UI**
 
 ---
