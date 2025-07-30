@@ -339,7 +339,7 @@ export default function TodoPage() {
 
   return (
     <>
-      {!user && loading && (
+      {loading && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -374,7 +374,7 @@ export default function TodoPage() {
         </motion.div>
       )}
 
-      {!user && (
+      {!user && !loading && (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -438,7 +438,7 @@ export default function TodoPage() {
       )}
 
       {user && (
-        <div className="max-w-xl mx-auto mt-10 px-4 ">
+        <div className="max-w-xl mx-auto mt-5 px-4 ">
         <h3 className="text-xl text-center mb-2">Welcome Back | {" "}
                <span className="text-green-500">
                   {user.email.split("@")[0]}</span>
@@ -538,7 +538,7 @@ export default function TodoPage() {
                 items={filteredTasks.map((_, i) => i.toString())}
                 strategy={verticalListSortingStrategy}
               >
-                <ul className="tasks_list space-y-2 min-h-65 max-h-65 overflow-y-auto rounded-xl overflow-x-hidden">
+                <ul className="tasks_list space-y-2 min-h-68 max-h-68 overflow-y-auto rounded-xl overflow-x-hidden">
                   <AnimatePresence>
                     {filteredTasks.map((task, i) => (
                       <SortableItem id={i.toString()} key={i}>
@@ -697,7 +697,7 @@ export default function TodoPage() {
             <motion.div
               whileTap={{ scale: 0.95 }}
               onClick={deleteAll}
-              className="DeleteAll_btn cursor-pointer mb-6 mt-5 bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded-xl block mx-auto w-1/3 text-center"
+              className="DeleteAll_btn cursor-pointer mt-4 bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded-xl block mx-auto w-1/3 text-center"
             >
               Delete All Tasks
             </motion.div>
