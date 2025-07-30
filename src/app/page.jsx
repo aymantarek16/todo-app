@@ -223,7 +223,7 @@ export default function TodoPage() {
   // 🔔 Notification function
   const notify = (taskText) => {
     const msg = new SpeechSynthesisUtterance();
-    msg.text = `Hi Ayman, don't forget to: ${taskText}`;
+    msg.text = `Hi, don't forget to: ${taskText}`;
     msg.lang = "en-US";
     window.speechSynthesis.speak(msg);
 
