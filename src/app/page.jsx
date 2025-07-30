@@ -80,6 +80,7 @@ export default function TodoPage() {
   const [activeReminderMenu, setActiveReminderMenu] = useState(null);
   const [timeoutIds, setTimeoutIds] = useState({});
   const [loading, setLoading] = useState(false);
+  const [initialLoading, setInitialLoading] = useState(true);
 
   const dropdownRef = useRef(null);
 
@@ -90,9 +91,10 @@ export default function TodoPage() {
       } else {
         setUser(null);
       }
+      setInitialLoading(false);
     });
 
-    return () => unsubscribe(); // Cleanup
+    return () => unsubscribe();
   }, []);
 
   // Upload Tasks From FireStore
@@ -339,8 +341,40 @@ export default function TodoPage() {
 
   return (
     <>
-      {/* 🌀 Loading Spinner */}
-      {loading && (
+      {/* Loading Duration Refresh */}
+      {initialLoading && (
+        <motion.div
+          className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-green-950  z-50"
+        >
+          <motion.div
+            className="relative w-16 h-16"
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 1.2,
+            }}
+          >
+            <div className="absolute inset-0 rounded-full border-4 border-t-transparent border-b-transparent border-l-white border-r-white" />
+            <motion.div
+              className="absolute inset-1 rounded-full bg-zinc-900"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{
+                duration: 0.6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* 🌀 Loading & Tasks & Auth Page */}
+      {loading ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -373,76 +407,7 @@ export default function TodoPage() {
             />
           </motion.div>
         </motion.div>
-      )}
-
-      
-      {/* 👤 Auth UI */}
-      {!user  && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex flex-col items-center justify-center min-h-screen text-white bg-gradient-to-br from-black via-zinc-900 to-green-950"
-        >
-          {/* Title changes based on auth mode */}
-          <h2 className="text-2xl font-bold mb-4">
-            {authMode === "login" ? "Login" : "Create Account"}
-          </h2>
-
-          {/* Auth Form Container */}
-          <div className="bg-zinc-800 p-6 rounded-xl shadow-xl w-80 space-y-4">
-            {/* Email Input Field */}
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-zinc-700 text-white outline-none"
-            />
-
-            {/* Password Input Field with Toggle */}
-            <div className="relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 pr-12 rounded-xl bg-zinc-700 text-white outline-none"
-              />
-              <div
-                onClick={() => setShowPassword((prev) => !prev)}
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer text-zinc-400"
-              >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-              </div>
-            </div>
-
-            {/* Submit Button (Login or Sign Up) */}
-            <button
-              onClick={handleAuth}
-              className="w-full cursor-pointer bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl"
-            >
-              {authMode === "login" ? "Login" : "Sign Up"}
-            </button>
-
-            {/* Switch between Login and Sign Up */}
-            <p
-              onClick={() =>
-                setAuthMode(authMode === "login" ? "signup" : "login")
-              }
-              className="text-sm text-blue-400 text-center cursor-pointer"
-            >
-              {authMode === "login"
-                ? "Don't have an account? Sign up"
-                : "Already have an account? Log in"}
-            </p>
-          </div>
-        </motion.div>
-      )}
-
-
-      {/* 📝 Main Todo List UI */}
-      {user && (
+      ) : user ? (
         <div className="max-w-xl mx-auto mt-5 px-4 ">
           <h3 className="text-xl text-center mb-2">
             Welcome Back |{" "}
@@ -760,6 +725,67 @@ export default function TodoPage() {
             )}
           </AnimatePresence>
         </div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col items-center justify-center min-h-screen text-white bg-gradient-to-br from-black via-zinc-900 to-green-950"
+        >
+          {/* Title changes based on auth mode */}
+          <h2 className="text-2xl font-bold mb-4">
+            {authMode === "login" ? "Login" : "Create Account"}
+          </h2>
+
+          {/* Auth Form Container */}
+          <div className="bg-zinc-800 p-6 rounded-xl shadow-xl w-80 space-y-4">
+            {/* Email Input Field */}
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl bg-zinc-700 text-white outline-none"
+            />
+
+            {/* Password Input Field with Toggle */}
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 pr-12 rounded-xl bg-zinc-700 text-white outline-none"
+              />
+              <div
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer text-zinc-400"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </div>
+            </div>
+
+            {/* Submit Button (Login or Sign Up) */}
+            <button
+              onClick={handleAuth}
+              className="w-full cursor-pointer bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl"
+            >
+              {authMode === "login" ? "Login" : "Sign Up"}
+            </button>
+
+            {/* Switch between Login and Sign Up */}
+            <p
+              onClick={() =>
+                setAuthMode(authMode === "login" ? "signup" : "login")
+              }
+              className="text-sm text-blue-400 text-center cursor-pointer"
+            >
+              {authMode === "login"
+                ? "Don't have an account? Sign up"
+                : "Already have an account? Log in"}
+            </p>
+          </div>
+        </motion.div>
       )}
     </>
   );
