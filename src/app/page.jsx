@@ -339,6 +339,7 @@ export default function TodoPage() {
 
   return (
     <>
+      {/* 🌀 Loading Spinner */}
       {loading && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -374,7 +375,9 @@ export default function TodoPage() {
         </motion.div>
       )}
 
-      {!user && !loading && (
+      
+      {/* 👤 Auth UI */}
+      {!user  && (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -437,17 +440,19 @@ export default function TodoPage() {
         </motion.div>
       )}
 
+
+      {/* 📝 Main Todo List UI */}
       {user && (
         <div className="max-w-xl mx-auto mt-5 px-4 ">
-        <h3 className="text-xl text-center mb-2">Welcome Back | {" "}
-               <span className="text-green-500">
-                  {user.email.split("@")[0]}</span>
-            </h3>
+          <h3 className="text-xl text-center mb-2">
+            Welcome Back |{" "}
+            <span className="text-green-500">{user.email.split("@")[0]}</span>
+          </h3>
           {/* 🧠 Title */}
           <h1 className="text-2xl font-bold mb-2 text-center text-white">
-            To Do List    
+            To Do List
           </h1>
-          
+
           <p className="text-sm text-zinc-400 mb-2 text-center">
             Total: <span className="text-green-500 bold">{tasks.length}</span> |
             Active:{" "}
