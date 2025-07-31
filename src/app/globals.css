@@ -53,6 +53,7 @@ body {
     font-size: 12px !important;
   }
 
+  .add_btn,
   .edit_btn,
   .delete_btn {
     font-size: 12px !important;
@@ -71,8 +72,8 @@ body {
     font-size: 15px !important;
   }
   .tasks_list {
-    min-height: 90vh !important;
-    max-height: 90vh !important;
+    min-height: 50vh !important;
+    max-height: 50vh !important;
     width: 92vw !important;
     font-size: 14px !important;
   }

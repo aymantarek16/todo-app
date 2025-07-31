@@ -343,9 +343,7 @@ export default function TodoPage() {
     <>
       {/* Loading Duration Refresh */}
       {initialLoading && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-green-950  z-50"
-        >
+        <motion.div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-green-950  z-50">
           <motion.div
             className="relative w-16 h-16"
             animate={{
@@ -487,7 +485,7 @@ export default function TodoPage() {
               whileTap={{ scale: 0.9 }}
               type="submit"
               onClick={handleAddTask}
-              className="cursor-pointer bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-xl"
+              className="add_btn cursor-pointer bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-xl"
             >
               <Plus size={18} />
             </motion.div>
