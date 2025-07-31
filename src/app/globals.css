@@ -47,11 +47,23 @@ body {
     width: 92vw !important;
     font-size: 14px !important;
   }
+  .WelcomeBack{
+    font-size: 14px !important;
+  }
+  .toDoListTitle{
+    font-size: 18px !important;
+  }
+  .AllTitle{
+    font-size: 12px !important;
+  }
+  .filterDrop select option {
+    font-size: 12px !important;
+  }
   .logout_Btn {
     position: fixed;
     font-size: 13px;
     top: 20px;
-    right: 30px;
+    right: 22px;
     height: 30px;
   }
 }

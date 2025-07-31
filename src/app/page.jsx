@@ -409,16 +409,16 @@ export default function TodoPage() {
         </motion.div>
       ) : user ? (
         <div className="max-w-xl mx-auto mt-5 px-4 ">
-          <h3 className="text-xl text-center mb-2">
+          <h3 className="WelcomeBack text-xl text-center mb-2">
             Welcome Back |{" "}
             <span className="text-green-500">{user.email.split("@")[0]}</span>
           </h3>
           {/* 🧠 Title */}
-          <h1 className="text-2xl font-bold mb-2 text-center text-white">
+          <h1 className="toDoListTitle text-2xl font-bold mb-2 text-center text-white">
             To Do List
           </h1>
 
-          <p className="text-sm text-zinc-400 mb-2 text-center">
+          <p className="AllTitle text-sm text-zinc-400 mb-2 text-center">
             Total: <span className="text-green-500 bold">{tasks.length}</span> |
             Active:{" "}
             <span className="text-green-500">
@@ -444,7 +444,7 @@ export default function TodoPage() {
             </div>
 
             {/* Filtered tasks */}
-            <div className="flex justify-end mb-4">
+            <div className="filterDrop flex justify-end mb-4">
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
