@@ -59,6 +59,10 @@ body {
     padding: 8px !important;
   }
 
+  .edit_btn{
+    margin-left: 20px !important;  
+  }
+
   .inputTask {
     flex-grow: initial !important;
     width: 200px !important;
