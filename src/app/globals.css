@@ -35,6 +35,7 @@ body {
 @media (max-width: 640px) {
   body {
     font-size: 14px !important;
+    overflow: hidden !important;
   }
   [placeholder] {
     font-size: 10px !important;
@@ -97,7 +98,7 @@ body {
 .logout_Btn {
   position: fixed;
   font-size: 13px;
-  bottom: 10px;
+  bottom: 20px;
   right: 20px;
   height: 45px;
   width: 90px;
