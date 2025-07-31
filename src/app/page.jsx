@@ -474,7 +474,7 @@ export default function TodoPage() {
             <select
               value={reminderTime}
               onChange={(e) => setReminderTime(e.target.value)}
-              className="px-3 py-3 rounded-xl h text-white outline-none bg-zinc-700"
+              className="selectReminder px-3 py-3 rounded-xl h text-white outline-none bg-zinc-700"
             >
               <option value="">No Reminder</option>
               <option value="1">In 1 minutes</option>
@@ -550,7 +550,7 @@ export default function TodoPage() {
                               }`}
                             >
                               {task.reminderAt && !task.completed && (
-                                <span className="ml-2 text-sm text-green-500">
+                                <span className="clockTime ml-2 text-sm text-green-500">
                                   {timeLeft[i] || "00:00:00"}
                                 </span>
                               )}
@@ -563,7 +563,7 @@ export default function TodoPage() {
                                         i === activeReminderMenu ? null : i
                                       )
                                     }
-                                    className="text-blue-400 text-sm cursor-pointer"
+                                    className="clockIcon text-blue-400 text-sm cursor-pointer"
                                   >
                                     🕒
                                   </button>
@@ -627,7 +627,7 @@ export default function TodoPage() {
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => handleEdit(i)}
-                              className="cursor-pointer bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded-xl"
+                              className="edit_btn cursor-pointer bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded-xl"
                             >
                               <Pencil size={18} />
                             </button>
@@ -649,7 +649,7 @@ export default function TodoPage() {
                                   prev.filter((_, index) => index !== i)
                                 );
                               }}
-                              className="bg-red-900 hover:bg-red-700 cursor-pointer text-white px-4 py-2 rounded-xl"
+                              className="delete_btn bg-red-900 hover:bg-red-700 cursor-pointer text-white px-4 py-2 rounded-xl"
                             >
                               <Trash2 size={20} />
                             </button>

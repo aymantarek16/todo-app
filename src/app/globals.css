@@ -28,6 +28,10 @@ body {
   background: #666;
 }
 
+/* ========================
+   Media Query 
+=========================== */
+
 @media (max-width: 640px) {
   body {
     font-size: 14px !important;
@@ -35,35 +39,58 @@ body {
   [placeholder] {
     font-size: 10px !important;
   }
+  .taskDescription,
+  .WelcomeBack,
+  .AllTitle,
+  .filterDrop select option,
+  .selectReminder,
+  .tasks_list li,
+  .clockTime,
+  .taskReminder,
+  .taskDescription,
+  .taskStatus,
+  .taskActions {
+    font-size: 12px !important;
+  }
+
+  .edit_btn,
+  .delete_btn {
+    font-size: 12px !important;
+    padding: 8px !important;
+  }
+
   .inputTask {
     flex-grow: initial !important;
     width: 200px !important;
   }
   .DeleteAll_btn {
-    font-size: 12px !important;
+    font-size: 15px !important;
   }
   .tasks_list {
-    max-height: 80vh !important;
+    min-height: 90vh !important;
+    max-height: 90vh !important;
     width: 92vw !important;
     font-size: 14px !important;
   }
-  .WelcomeBack{
+  .taskTitle {
     font-size: 14px !important;
   }
-  .toDoListTitle{
-    font-size: 18px !important;
+
+  .addTaskBtn {
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px !important;
+    font-size: 14px !important;
   }
-  .AllTitle{
-    font-size: 12px !important;
-  }
-  .filterDrop select option {
-    font-size: 12px !important;
-  }
-  .logout_Btn {
-    position: fixed;
-    font-size: 13px;
-    top: 20px;
-    right: 22px;
-    height: 30px;
-  }
+}
+.toDoListTitle {
+  font-size: 20px !important;
+}
+
+.logout_Btn {
+  position: fixed;
+  font-size: 13px;
+  top: 14px;
+  right: 24px;
+  height: 30px;
 }
