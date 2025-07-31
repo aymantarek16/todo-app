@@ -35,6 +35,7 @@ body {
 @media (max-width: 640px) {
   body {
     font-size: 14px !important;
+    max-height: 100vh !important;
     overflow: hidden !important;
   }
   [placeholder] {
