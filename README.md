@@ -41,7 +41,8 @@ A powerful and modern task manager built with the latest technologies. It includ
 
 ## 🛠️ Getting Started
 
-1. **Clone the repo**  
+**Clone the repo**  
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
+
